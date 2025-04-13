@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: #111;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .tela {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .tela.ativa {
+    display: flex;
+  }
+  
+  .tela h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  #botaoIniciar {
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  #botaoIniciar:hover {
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.05);
+  }
+  
+  #botaoIniciar .coracao {
+    margin-right: 0.5rem;
+  }
+  
+  .fotos {
+    position: relative;
+    width: 250px;
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  
+  .fotos img {
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .fotos img.ativa {
+    opacity: 1;
+    position: relative;
+  }
+  
+  .contador {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contador .coracao {
+    color: #e25555;
+    margin-right: 0.5rem;
+  }
+  
+  hr {
+    width: 80%;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin: 1.5rem 0;
+  }
+  
+  .mensagem {
+    max-width: 600px;
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+  
+  .coracoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .coracoes span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: flutuar 8s linear infinite;
+  }
+  
+  .coracoes span::before,
+  .coracoes span::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+  }
+  
+  .coracoes span::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .coracoes span::after {
+    left: -10px;
+    top: 0;
+  }
+  
+  @keyframes flutuar {
+    0% {
+      transform: translateY(100vh) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
